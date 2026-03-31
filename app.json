@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "HackCoder Academy",
+    "slug": "hackcoder-academy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "hackcoder",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hackcoder.academy",
+      "infoPlist": {
+        "NSCameraUsageDescription": "HackCoder Academy uses camera for profile and assignments",
+        "NSMicrophoneUsageDescription": "HackCoder Academy uses microphone for live classes"
+      }
+    },
+    "android": {
+      "package": "com.hackcoder.academy",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-local-authentication",
+      "expo-notifications"
+    ]
+  }
+}
