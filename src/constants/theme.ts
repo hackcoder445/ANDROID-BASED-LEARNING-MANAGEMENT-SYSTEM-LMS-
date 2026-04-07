@@ -1,7 +1,7 @@
 export const Colors = {
-  background: '#0A0C14',
-  surface: '#111420',
-  card: '#161A28',
+  background: '#0E1324',
+  surface: '#161E34',
+  card: '#1B2542',
   primary: '#5B6EF5',
   secondary: '#8B5CF6',
   success: '#22D3A0',
@@ -9,9 +9,9 @@ export const Colors = {
   danger: '#EF4444',
   info: '#06B6D4',
   textPrimary: '#F0F2FF',
-  textMuted: '#7A7F9A',
+  textMuted: '#9AA4C6',
   border: 'rgba(255,255,255,0.07)',
-  glass: 'rgba(22,26,40,0.6)',
+  glass: 'rgba(27,37,66,0.68)',
 };
 
 export const Typography = {

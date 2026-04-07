@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, ViewStyle } from 'react-native';
 
-import { Colors, Spacing } from '@/constants/theme';
+import { Spacing } from '@/constants/theme';
+import { AppBackground } from '@/components/common/AppBackground';
 
 type Props = {
   children: React.ReactNode;
@@ -12,24 +13,29 @@ type Props = {
 export const ScreenContainer = ({ children, scroll = false, style }: Props) => {
   if (scroll) {
     return (
-      <SafeAreaView style={styles.safe}>
-        <ScrollView
-          contentContainerStyle={[styles.scrollContent, style]}
-          showsVerticalScrollIndicator={false}
-        >
-          {children}
-        </ScrollView>
-      </SafeAreaView>
+      <AppBackground>
+        <SafeAreaView style={styles.safe}>
+          <ScrollView
+            contentContainerStyle={[styles.scrollContent, style]}
+            showsVerticalScrollIndicator={false}
+          >
+            {children}
+          </ScrollView>
+        </SafeAreaView>
+      </AppBackground>
     );
   }
 
-  return <SafeAreaView style={[styles.safe, style]}>{children}</SafeAreaView>;
+  return (
+    <AppBackground>
+      <SafeAreaView style={[styles.safe, style]}>{children}</SafeAreaView>
+    </AppBackground>
+  );
 };
 
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: Colors.background,
   },
   scrollContent: {
     padding: Spacing.lg,

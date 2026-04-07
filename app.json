@@ -1,34 +1,41 @@
 {
   "expo": {
-    "name": "HackCoder Academy",
-    "slug": "hackcoder-academy",
+    "name": "Genesis_LMS",
+    "slug": "genesis-lms",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "hackcoder",
+    "scheme": "genesislms",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hackcoder.academy",
+      "bundleIdentifier": "com.genesis.lms",
       "infoPlist": {
         "NSCameraUsageDescription": "HackCoder Academy uses camera for profile and assignments",
         "NSMicrophoneUsageDescription": "HackCoder Academy uses microphone for live classes"
       }
     },
     "android": {
-      "package": "com.hackcoder.academy",
+      "package": "com.genesis.lms",
       "permissions": [
         "CAMERA",
         "RECORD_AUDIO",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "POST_NOTIFICATIONS",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
       ]
     },
     "plugins": [
       "expo-local-authentication",
-      "expo-notifications"
-    ]
+      "expo-notifications",
+      "expo-build-properties"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5dc5108f-aa83-48e0-a5d4-a82b586590a0"
+      }
+    }
   }
 }

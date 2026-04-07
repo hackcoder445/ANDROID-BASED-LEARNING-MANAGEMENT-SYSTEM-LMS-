@@ -1,4 +1,4 @@
-import React from 'react';
+ï»¿import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Course } from '@/types/models';
@@ -32,8 +32,8 @@ export const CourseCard = ({ course, onPress, action = 'Enroll' }: Props) => {
       <View style={styles.body}>
         <Text style={styles.title} numberOfLines={2}>{course.title}</Text>
         <Text style={styles.meta}>{course.instructor}</Text>
-        <Text style={styles.meta}>? {course.rating} ({course.reviews})</Text>
-        <Text style={styles.meta}>{course.durationHours}h • {course.lessons} lessons</Text>
+        <Text style={styles.meta}>Star {course.rating} ({course.reviews})</Text>
+        <Text style={styles.meta}>{course.durationHours}h | {course.lessons} lessons</Text>
         <Text style={styles.price}>{course.price === 0 ? 'FREE' : `$${course.price}`}</Text>
         {typeof course.progress === 'number' ? (
           <View style={styles.progressTrack}>
@@ -49,16 +49,21 @@ export const CourseCard = ({ course, onPress, action = 'Enroll' }: Props) => {
 const styles = StyleSheet.create({
   wrap: {
     width: 220,
-    backgroundColor: Colors.glass,
+    backgroundColor: 'rgba(26,36,64,0.84)',
     borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 20,
+    borderColor: 'rgba(139,92,246,0.24)',
+    borderRadius: 22,
     overflow: 'hidden',
+    shadowColor: '#5B6EF5',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.28,
+    shadowRadius: 20,
+    elevation: 10,
   },
   pressed: {
-    transform: [{ perspective: 900 }, { rotateX: '2deg' }, { rotateY: '-3deg' }, { scale: 0.99 }],
+    transform: [{ perspective: 1000 }, { rotateX: '6deg' }, { rotateY: '-6deg' }, { scale: 0.985 }],
   },
-  thumb: { width: '100%', height: 120 },
+  thumb: { width: '100%', height: 124 },
   badge: {
     position: 'absolute',
     top: 10,
@@ -69,13 +74,13 @@ const styles = StyleSheet.create({
   },
   badgeText: { color: '#fff', fontFamily: Typography.bodyMedium, fontSize: 11 },
   body: { padding: 12, gap: 6 },
-  title: { color: Colors.textPrimary, fontFamily: Typography.heading, fontSize: 14 },
+  title: { color: Colors.textPrimary, fontFamily: Typography.heading, fontSize: 15 },
   meta: { color: Colors.textMuted, fontFamily: Typography.body, fontSize: 12 },
-  price: { color: Colors.info, fontFamily: Typography.bodyMedium, fontSize: 12 },
+  price: { color: '#9CE4FF', fontFamily: Typography.bodyMedium, fontSize: 12 },
   progressTrack: {
-    height: 7,
+    height: 8,
     borderRadius: 999,
-    backgroundColor: Colors.surface,
+    backgroundColor: 'rgba(255,255,255,0.08)',
     overflow: 'hidden',
   },
   progressFill: { height: '100%', backgroundColor: Colors.success },

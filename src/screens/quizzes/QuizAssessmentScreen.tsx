@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text } from 'react-native';
+﻿import React, { useState } from 'react';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { FeatureScaffold } from '@/components/common/FeatureScaffold';
 import { GlassCard } from '@/components/common/GlassCard';
@@ -21,13 +22,13 @@ export const QuizAssessmentScreen = () => {
   const total = 10;
 
   return (
-    <FeatureScaffold title="Quizzes & Assessments" subtitle={`Question ${index + 1} of ${total}`}>
+    <FeatureScaffold title="Quiz Arena" subtitle={`Question ${index + 1} of ${total}`}>
       <GlassCard>
-        <Text style={styles.title}>Type: {questionTypes[index % questionTypes.length]}</Text>
+        <View style={styles.row}><MaterialCommunityIcons name="shape-outline" size={18} color={Colors.info} /><Text style={styles.title}>Type: {questionTypes[index % questionTypes.length]}</Text></View>
         <Text style={styles.meta}>Adaptive engine enabled: difficulty changes with streaks.</Text>
       </GlassCard>
       <GlassCard>
-        <Text style={styles.meta}>Timer: 00:42</Text>
+        <View style={styles.row}><Ionicons name="timer-outline" size={18} color={Colors.warning} /><Text style={styles.meta}>Timer: 00:42</Text></View>
         <Text style={styles.title}>What is the purpose of signed video URLs?</Text>
       </GlassCard>
       <GradientButton title="Submit Answer" onPress={() => setIndex((i) => Math.min(i + 1, total - 1))} />
@@ -37,6 +38,7 @@ export const QuizAssessmentScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  row: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   title: { color: Colors.textPrimary, fontFamily: Typography.heading, fontSize: 18 },
   meta: { color: Colors.textMuted, fontFamily: Typography.body, fontSize: 12 },
 });

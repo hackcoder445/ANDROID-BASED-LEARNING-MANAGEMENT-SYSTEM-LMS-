@@ -1,5 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+﻿import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { FeatureScaffold } from '@/components/common/FeatureScaffold';
 import { GlassCard } from '@/components/common/GlassCard';
@@ -9,13 +10,11 @@ import { Colors, Typography } from '@/constants/theme';
 export const NotificationCenterScreen = () => (
   <FeatureScaffold title="Notification Center" subtitle="All activity and reminders">
     <GlassCard>
-      <Text style={styles.type}>Live Class</Text>
-      <Text style={styles.title}>Live class starts in 30 minutes</Text>
+      <View style={styles.row}><Ionicons name="videocam-outline" size={18} color={Colors.danger} /><Text style={styles.title}>Live class starts in 30 minutes</Text></View>
       <Text style={styles.meta}>Tap to join directly</Text>
     </GlassCard>
     <GlassCard>
-      <Text style={styles.type}>Streak</Text>
-      <Text style={styles.title}>Your streak is at risk today</Text>
+      <View style={styles.row}><Ionicons name="flame-outline" size={18} color={Colors.warning} /><Text style={styles.title}>Your streak is at risk today</Text></View>
       <Text style={styles.meta}>2 hours left before midnight</Text>
     </GlassCard>
     <GradientButton title="Mark All Read" fullWidth />
@@ -23,7 +22,7 @@ export const NotificationCenterScreen = () => (
 );
 
 const styles = StyleSheet.create({
-  type: { color: Colors.info, fontFamily: Typography.bodyMedium, fontSize: 12 },
-  title: { color: Colors.textPrimary, fontFamily: Typography.heading, fontSize: 16 },
+  row: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  title: { color: Colors.textPrimary, fontFamily: Typography.heading, fontSize: 15 },
   meta: { color: Colors.textMuted, fontFamily: Typography.body, fontSize: 12 },
 });
